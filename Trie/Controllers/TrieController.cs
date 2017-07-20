@@ -12,11 +12,11 @@ namespace Trie.Controllers
         /// <summary>
         /// Procurar uma palavra na árvore
         /// </summary>       
-        [Route("")]
+        [Route("search")]
         [HttpGet]
         public IHttpActionResult Get(string keyWord)
         {
-            var result = TrieService.search(keyWord);
+            var result = TrieService.search(keyWord, false);
             return Ok(result);
         }
 
@@ -25,9 +25,9 @@ namespace Trie.Controllers
         /// </summary>
         /// <param name="keyword"></param>
         /// <returns></returns>
-        [Route("")]
+        [Route("insert")]
         [HttpPost]
-        public IHttpActionResult Post([FromBody]string keyword)
+        public IHttpActionResult Post(string keyword)
         {
             TrieService.insert(keyword);
             return Created<string>("",keyword);

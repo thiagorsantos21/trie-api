@@ -12,7 +12,7 @@ namespace Trie.Services
         /// <param name="word"></param>
         public static void insert(string word)
         {
-            if (search(word) == true)
+            if (search(word, false) == true)
                 return;
 
             TrieNode current = root;
@@ -32,7 +32,7 @@ namespace Trie.Services
         }
 
         /* Busca a palavra na Arvore*/
-        public static bool search(string word)
+        public static bool search(string word, bool searchPrefix)
         {
             TrieNode current = root;
             foreach (char ch in word.ToCharArray())
@@ -42,7 +42,7 @@ namespace Trie.Services
                 else
                     current = current.subNode(ch);
             }
-            if (current.isEnd == true)
+            if (current.isEnd == true || searchPrefix)
                 return true;
             return false;
         }
@@ -51,7 +51,7 @@ namespace Trie.Services
         /* Retorna se a palavra existe na arvore */
         public static bool startsWith(string prefix)
         {
-            var result = search(prefix);
+            var result = search(prefix, true);
             return result;
         }
 
