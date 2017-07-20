@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Trie</name>
+    </assembly>
+    <members>
+        <member name="M:Trie.Controllers.TrieController.Get(System.String)">
+            <summary>
+            Procurar uma palavra na árvore
+            </summary>       
+        </member>
+        <member name="M:Trie.Controllers.TrieController.Post(System.String)">
+            <summary>
+             Incluir uma nova palavara no árvore
+            </summary>
+            <param name="keyword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Trie.Controllers.TrieController.StartWith(System.String)">
+            <summary>
+            / Verifica se na árvore existe uma palavra com prefixo indicado
+            </summary>
+            <param name="keyWord"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Trie.Services.TrieService.insert(System.String)">
+            <summary>
+            Insere uma nova palavra na Arvore
+            </summary>
+            <param name="word"></param>
+        </member>
+    </members>
+</doc>
